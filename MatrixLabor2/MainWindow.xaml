@@ -1,12 +1,49 @@
-﻿<Window x:Class="MatrixLabor2.MainWindow"
+﻿<Window x:Class="MatrixApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MatrixLabor2"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title = "Лабораторная работа №2. Магомедсайгитов Марат 3-47" Height="450" Width="700">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="176*"/>
+            <RowDefinition Height="41*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.RowSpan="2">
+            <TextBlock Text="Размеры матриц:" Margin="10 5" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Background="Green" Text="Матрица X:" Margin="10 5"/>
+                <TextBox x:Name="MatrixXRowsTextBox" Width="40" Margin="5"/>
+                <TextBlock Text="x" VerticalAlignment="Center"/>
+                <TextBox x:Name="MatrixXColsTextBox" Width="40" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Background="Green" Text="Матрица Y:" Margin="10 5"/>
+                <TextBox x:Name="MatrixYRowsTextBox" Width="40" Margin="5"/>
+                <TextBlock Text="x" VerticalAlignment="Center"/>
+                <TextBox x:Name="MatrixYColsTextBox" Width="40" Margin="5"/>
+            </StackPanel>
 
+            <Button Content="Создать матрицы" Background="Red" Click="CreateMatrices_Click" Margin="10" Height="30"/>
+            <Button Content="Заполнить случайными числами" Background="Red" Click="FillWithRandomValues_Click" Margin="10 0" Height="30"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <ItemsControl x:Name="MatrixXDisplay" Margin="10" />
+                <ItemsControl x:Name="MatrixYDisplay" Margin="10" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <TextBlock Text="Операция:" />
+                <ComboBox x:Name="OperationSelector" Width="100" Margin="10 0 0 0">
+                    <ComboBoxItem Content="Сложение" />
+                    <ComboBoxItem Content="Умножение" />
+                </ComboBox>
+            </StackPanel>
+
+            <Button Content="Рассчитать" Background="Red" Click="Calculate_Click" Margin="10" Height="30"/>
+
+            <ItemsControl x:Name="ResultMatrixDisplay" Margin="10" />
+
+            <TextBlock x:Name="ElapsedTimeTextBlock" Margin="10" />
+            <Button Content="Сохранить результат" Background="Red" Click="SaveResult_Click" Margin="10" Height="30"/>
+        </StackPanel>
     </Grid>
 </Window>
