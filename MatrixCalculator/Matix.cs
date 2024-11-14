@@ -25,8 +25,19 @@ namespace Matrix
         public void Populate(Func<int, int, T> valueGenerator)
         {
             for (int i = 0; i < RowCount; i++)
+            {
                 for (int j = 0; j < ColumnCount; j++)
-                    _elements[i, j] = valueGenerator(i, j);
+                {
+                    try
+                    {
+                        _elements[i, j] = valueGenerator(i, j);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ArgumentException("Ошибка при заполнении матрицы сгенерированными значениями.", ex);
+                    }
+                }
+            }
         }
 
         public static Matrix<T> operator +(Matrix<T> first, Matrix<T> second)

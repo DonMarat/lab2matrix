@@ -132,7 +132,7 @@ namespace MatrixApp
                 }
                 else
                 {
-                    MessageBox.Show("Размеры матриц должны совпадать для сложения.");
+                    MessageBox.Show("Для сложения размеры матриц должны совпадать. ");
                 }
             }
             else if (OperationSelector.SelectedIndex == 1)

@@ -38,7 +38,7 @@
                 </ComboBox>
             </StackPanel>
 
-            <Button Content="Рассчитать" Background="Red" Click="Calculate_Click" Margin="10" Height="30"/>
+            <Button Content="Рассчитать результат" Background="Red" Click="Calculate_Click" Margin="10" Height="30"/>
 
             <ItemsControl x:Name="ResultMatrixDisplay" Margin="10" />
 
